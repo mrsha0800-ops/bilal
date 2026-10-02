@@ -21,7 +21,7 @@ async def recharge(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 if __name__ == '__main__':
-    TOKEN = 'YOUR_BOT_TOKEN_HERE'
+    TOKEN = '8842428587:AAEwfrQitnFO8ZDA1P2NfZ0NFbhtxMs0l-k'
     application = ApplicationBuilder().token(TOKEN).build()
 
     start_handler = CommandHandler('start', start)
