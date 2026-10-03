@@ -80,4 +80,22 @@ if __name__ == '__main__':
     application.add_handler(recharge_handler)
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, auto_reply))
 
-    application.run_polling()
+    
+import os
+from flask import Flask, request
+from telegram import Update
+# تأكد من أن 'application' معرف مسبقاً في ملفك
+
+app = Flask(__name__)
+# استبدل YOUR_TOKEN بالتوك الخاص ببوتك
+TOKEN ='8938980879:AAE47mDXuDX7vuB5_OjZR-K8EBz8indssuE'
+
+@app.route(f'/{TOKEN}', methods=['POST'])
+def webhook():
+    update = Update.de_json(request.get_json(), application.bot)
+    application.update_queue.put(update)
+    return 'ok', 200
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
