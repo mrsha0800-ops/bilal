@@ -63,7 +63,7 @@ async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return ConversationHandler.END
 
 if __name__ == '__main__':
-    TOKEN = '8842428587:AAEwfrQitnFO8ZDA1P2NfZ0NFbhtxMs0l-k'
+    TOKEN = '8938980879:AAE47mDXuDX7vuB5_OjZR-K8EBz8indssuE'
     application = ApplicationBuilder().token(TOKEN).build()
     recharge_handler = ConversationHandler(
         entry_points=[
