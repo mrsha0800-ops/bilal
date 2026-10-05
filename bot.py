@@ -12,7 +12,7 @@ from telegram.ext import (
 )
 
 # ----------------- الإعدادات -----------------
-TOKEN = "8960048306:AAF4KfQSPVFxIr-4TzW4Nb0wyGMy1AOgM7A"  # ضع توكين البوت الجديد هنا
+TOKEN = "8960048306:AAHCDECmfx59E12PHn2-gF52gwObbmyjawk"  # ضع توكين البوت الجديد هنا
 ADMIN_CHAT_ID = 0                 # ضع أيدي حسابك الرقمي هنا
 
 # حالات المحادثة (Conversation States)
