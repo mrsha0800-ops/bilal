@@ -4,25 +4,25 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
 
-# --- خادم وهمي لإرضاء منصة Render لتخطي خطأ الـ Port ---
+# --- خادم وهمي لإرضاء منصة Render وتجاوز فحص الـ Port ---
 class DummyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.end_headers()
-        self.wfile.write(b"Bot is active!")
+        self.wfile.write(b"Bot is running successfully!")
 
     def log_message(self, format, *args):
-        pass # إخفاء السجلات غير الضرورية
+        pass
 
 def run_dummy_server():
     port = int(os.environ.get("PORT", 8080))
     server = HTTPServer(("0.0.0.0", port), DummyHandler)
     server.serve_forever()
 
-# تشغيل الخادم الوهمي في الخلفية
+# تشغيل الخادم الوهمي في خيط فرعي (Background Thread)
 threading.Thread(target=run_dummy_server, daemon=True).start()
 
-# --- كود البوت ---
+# --- كود البوت الرئيسي ---
 BOT_TOKEN = "8747417167:AAEFLo-4vvMvJuKwA_ZOAxKMtOtNSt8mYmA"
 ADMIN_LINK = "https://t.me/srheiwk"
 
