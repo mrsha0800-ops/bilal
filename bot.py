@@ -2,7 +2,7 @@ from telegram import ReplyKeyboardMarkup, Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
 
 # بيانات البوت والمسؤول
-BOT_TOKEN = "8747417167:AAEvOBVFAW0bb_hkLXG94LyuuQpSTGB6Qcc"
+BOT_TOKEN = "8747417167:AAEFLo-4vvMvJuKwA_ZOAxKMtOtNSt8mYmA"
 ADMIN_LINK = "https://t.me/srheiwk"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
